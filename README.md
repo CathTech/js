@@ -1,5 +1,5 @@
 # Репозиторий задач по JS.
-Первое задание https://jsbin.com/vizaniy/edit?html,js,output
+Первое задание https://jsbin.com/vizaniy/edit?html,js,output \n
 Второе задание см. файл
 Третье задание https://jsbin.com/xoxerim/edit?js,console
 
