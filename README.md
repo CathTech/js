@@ -1,10 +1,10 @@
 # Репозиторий задач по JS.
-Первое задание https://jsbin.com/vizaniy/edit?html,js,output
+2л) Первое задание https://jsbin.com/vizaniy/edit?html,js,output
 
-Второе задание см. файл
+3л) Второе задание см. файл 2.js
 
-Третье задание https://jsbin.com/xoxerim/edit?js,console
+4л) Третье задание https://jsbin.com/xoxerim/edit?js,console
 
-Практическая 1: Charts.min.js + utils.js + index.html (styles.css не стал выносить, так как стилей мало)
+5л) Практическая 1: Charts.min.js + utils.js + index.html (styles.css не стал выносить, так как стилей мало)
 
 CathTech / 2020
