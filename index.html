@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Vikhman EM-73 Charts.js</title>
+	<meta charset="UTF-8" />
+	<script src="Chart.min.js"></script>
+	<script src="utils.js"></script>
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	
+	#allBox{
+		width:100%;
+		outline: 2px solid #000; /* Чёрная рамка */
+		float: left; /* Обтекание по правому краю */
+	}
+	#btnBox{
+		width:24%;
+		float: left; /* Обтекание по правому краю */
+		margin-top: 25%;
+	}
+	
+	#chartBox{
+		width:74%;
+		float: left; /* Обтекание по правому краю */
+	}
+	
+	.btn{	 
+		padding: 1px 0;
+		margin-left: 0.2em;
+		margin-top: 0.5em;
+		text-align: center;
+		width:100%;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="allBox">
+		<div id="btnBox">
+			<input type="text" placeholder="Ввод Х" id="xPoint" style="width:97%;"></input>
+			<input type="button" class="btn" value="Построить"id="addData" ></button>
+			<input type="button" class="btn" value="Удалить"id="removeData" ></button>
+			<input type="button" class="btn" value="Очистить"id="clearData" ></button>
+		
+		</div>
+		
+		<div id="chartBox">
+			<canvas id="canvas"></canvas>
+			
+		</div>
+	</div>
+	<script>
+		var config = {
+			type: 'line',
+			data: {
+				labels: [0],
+				datasets: [{
+					label: 'sqrt(x)',
+					backgroundColor: window.chartColors.green,
+					borderColor: window.chartColors.purple,
+					data: [
+						0
+					],
+					fill: false,
+				}]
+			},
+			options: {
+				responsive: true,
+				title: {
+					display: true,
+					text: 'Chart.js График по координатам'
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false,
+				},
+				hover: {
+					mode: 'nearest',
+					intersect: true
+				},
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'X'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: 'Значение'
+						}
+					}]
+				}
+			}
+		};
+
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+
+
+		var colorNames = Object.keys(window.chartColors);
+		
+		//Кнопка добавления
+		document.getElementById('addData').addEventListener('click', function() {
+			if (config.data.datasets.length > 0) {
+				config.data.labels.push();
+
+				config.data.datasets.forEach(function(dataset) {
+				//чтение параметра из поля, проверка на правильность, взятие функции, вывод.
+					tmp = parseInt(document.getElementById('xPoint').value);
+					if (isNaN(tmp))
+					  tmp = 0;
+					else
+					{
+						config.data.labels.push(tmp);
+						tmp = Math.sqrt(tmp);
+						dataset.data.push(tmp);
+					}
+				});
+				document.getElementById('xPoint').value = "";
+				//построение графика с новыми данными
+				window.myLine.update();
+			}
+		});
+
+		//удаление прошлой точки
+		document.getElementById('removeData').addEventListener('click', function() {
+			config.data.labels.splice(-1, 1); // remove the label first
+
+			config.data.datasets.forEach(function(dataset) {
+				dataset.data.pop();
+			});
+
+			window.myLine.update();
+		});
+		
+		
+		//удаление всех точек
+		document.getElementById('clearData').addEventListener('click', function() {
+			
+			config.data.datasets[0].data = [];
+			config.data.labels = [];
+
+			window.myLine.update();
+		});
+	</script>
+</body>
+
+</html>
