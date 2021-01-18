@@ -1,0 +1,95 @@
+#mainBlock{
+	border: 1px solid black; 
+	border-radius: 8px; 
+  padding: 5px; 
+  margin-top: 10%;
+}
+
+#textBlock{
+  margin-top: 30px;
+  float:right;
+}
+
+#post{
+	border: 2px solid black; 
+  border-radius: 8px; 
+  margin-bottom: 1%;
+  padding: 10px; 
+}
+
+#comment{
+  margin-left:2%;
+	border: 1px solid black; 
+	border-radius: 8px; 
+  padding: 10px; 
+}
+
+#idBlock{
+  font-family: arial,sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+}
+
+#nameBlock{
+  font-family: arial,sans-serif;
+  font-size: 3vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+}
+
+#mailBlock{
+  font-family: arial,sans-serif;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+}
+
+#bodyBlock{
+  margin-left:5em;  
+  margin-top: 3%;
+  font-family: arial,sans-serif;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+  word-wrap:break-word;
+}
+
+#postID{
+  font-family: arial,sans-serif;
+  font-size: 4vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+  text-decoration: none;
+  
+}
+
+div.btn1 {
+  margin-top: 1%;
+  margin-bottom: 30%;
+  float:left;
+  width:10em;
+  margin-bottom: 1%;
+  text-align: center;
+  font-family: arial,sans-serif;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: rgb(68,68,68);
+  text-decoration: none;
+  padding: .2em 1.2em;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 2px;
+  background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
+}
+div.btn1:hover {
+  color: rgb(24,24,24);
+  border: 1px solid rgb(198,198,198);
+  background: #f7f7f7 linear-gradient(#f7f7f7, #e1e1e1);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+div.btn1:active {
+  color: rgb(51,51,51);
+  border: 1px solid rgb(204,204,204);
+  background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+  box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+}
